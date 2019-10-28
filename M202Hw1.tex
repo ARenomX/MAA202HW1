@@ -29,7 +29,7 @@
 \section{Exercise 1}
 \subsection{} %Exercise 1.1
 
-Let $B = \overline{B}(0,1) = \{x \in E \ | \ ||x|| \leq 1\}$ be the closed unit ball for the norm $||\cdot||$. Let us show that $B$ is cool. \\
+Let $B = \bar{B}(0,1) = \{x \in E \ | \ ||x|| \leq 1\}$ be the closed unit ball for the norm $||\cdot||$. Let us show that $B$ is cool. \\
 
 Let us prove that $B$ is convex. \\
 Take $x, y \in B$ and $t \in [0, 1]$. We want to prove that $tx + (1-t)y \in B$. To do so, we prove that $||tx + (1-t)y|| \leq 1$. 
@@ -129,7 +129,7 @@ This concludes the proof that the triangular inequality holds for $N_X$, and by 
 
 \subsubsection{} %Exercise 1.4.a
 
-We want to show that $||x|| \leq MN_X(x) \quad \forall x \in E$. In order to do this, we start from the fact that $X$ is bounded by $M$ and that therefore $X \subset \overline{B}(0,M)$. We have from this that $x \in N_X(x)\overline{X} \subset N_X\overline{B}(0,M)$. Since $x \in N_X\overline{B}(0,M)$ then $||x|| \leq MN_X$. This concludes the proof that $|| \cdot ||$ is weaker than $N_x$.
+We want to show that $||x|| \leq MN_X(x) \quad \forall x \in E$. In order to do this, we start from the fact that $X$ is bounded by $M$ and that therefore $X \subset \bar{B}(0,M)$. We have from this that $x \in N_X(x)\bar{X} \subset N_X\bar{B}(0,M)$. Since $x \in N_X\bar{B}(0,M)$ then $||x|| \leq MN_X$. This concludes the proof that $|| \cdot ||$ is weaker than $N_x$.
 
 \subsubsection{} %Exercise 1.4.b
 
@@ -140,6 +140,10 @@ Since $0 \in \mathring{X}$, we can consider $r := sup\{r \, | \, B(0,r) \subset 
 	N_X &\leq \frac{1}{r}||x||
 \end{align*}
 This concludes the proof that $N_X$ is weaker than $|| \cdot ||$, and therefore also that they are equivalent.
+
+\subsection{} %Exercise 1.5
+
+We know that $x \in \bar{X}$ is equivalent to
 
 
 
