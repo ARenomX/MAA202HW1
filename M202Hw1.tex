@@ -89,10 +89,27 @@ We therefore have that $\alpha X + \beta X \supseteq (\alpha + \beta )X$.\\ This
 
 \subsubsection{}%Exercise 1.3.b
 
-
-
+We want to show that $N_X(\lambda x) = |\lambda|N_X(x)$, we start from:
+\begin{align*}
+	N_X(\lambda x) &= \inf\{|\alpha | \, | \lambda x \in \alpha X\}
+\end{align*}
+But we know that $\lambda x \in \alpha X \Leftrightarrow \lambda x \in -\alpha X$, hence we can write:
+\begin{align*}
+	N_X(\lambda x) &= \inf\{|\alpha | \, | |\lambda| x \in \alpha X\}\\
+	&= \inf\{|\lambda \alpha | \, | x \in \alpha X\}\\
+	&= |\lambda|\inf\{|\alpha | \, | x \in \alpha X\}\\
+	&= |\lambda|N_X(x)
+\end{align*}
+This concludes the proof.
 \subsubsection{}%Exercise 1.3.c
-
+We want to show that $N_X(x) = 0 \Rightarrow x=0$, we start from:
+\begin{align*}
+	N_X(0) &= \inf\{|\alpha | \, | \lambda x \in \alpha X\} = 0\\
+	&\Rightarrow x \in 0 \times X\\
+	&\Rightarrow ||x|| \leq 0 \times M_X\\
+	&\Rightarrow x = 0
+\end{align*}
+This concludes the proof.
 
 
 \subsubsection{}%Exercise 1.3.d
