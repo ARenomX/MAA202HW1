@@ -19,10 +19,11 @@
 	\pagenumbering{gobble}
 	\maketitle
 
-	%\tableofcontents
+	\tableofcontents
 	%\listoffigures
 	\newpage
 	\pagenumbering{arabic}
+	\renewcommand{\thesubsubsection}{\thesubsection.\alph{subsubsection}}
 	%\renewcommand{\thesection}{\Roman{section}} %To set Section numbering to Roman
 
 \section{Exercise 1}
@@ -82,6 +83,7 @@ We therefore have that $\alpha X + \beta X \supset (\alpha + \beta )X$.\\ This c
 
 
 \subsection{}%Exercise 1.3
+\subsubsection{}
 
 
 
