@@ -123,9 +123,23 @@ N_X(x+y) &= \inf\{|\alpha| \ | \ (x+y) \in \alpha X\}\\
 &\leq \inf\{|\alpha| \ | \ x\in \alpha X\} + \textrm{inf}\{|\alpha| \ | \ y\in \alpha X\}\\
 &= N_X(x) + N_X(y)
 \end{align*}
-This concludes the proof that the triangular inequality holds for $N_x$, and by extension, that $N_x$ is a norm.
+This concludes the proof that the triangular inequality holds for $N_X$, and by extension, that $N_X$ is a norm.
 
 \subsection{} %Exercise 1.4
+
+\subsubsection{} %Exercise 1.4.a
+
+We want to show that $||x|| \leq MN_X(x) \quad \forall x \in E$. In order to do this, we start from the fact that $X$ is bounded by $M$ and that therefore $X \subset \overline{B}(0,M)$. We have from this that $x \in N_X(x)\overline{X} \subset N_X\overline{B}(0,M)$. Since $x \in N_X\overline{B}(0,M)$ then $||x|| \leq MN_X$. This concludes the proof that $|| \cdot ||$ is weaker than $N_x$.
+
+\subsubsection{} %Exercise 1.4.b
+
+We want to show that there exists an $\alpha$ such that for all $x$, $N_X(x) \leq \alpha ||x||$.
+Since $0 \in \mathring{X}$, we can consider $r := sup\{r \, | \, B(0,r) \subset X \}$ with $r \neq 0$. We then have that for all $x$, $N_XB(0,r) \subset B(0,x)$. We therefore have that:
+\begin{align*}
+	N_Xr &\leq ||x||\\
+	N_X &\leq \frac{1}{r}||x||
+\end{align*}
+This concludes the proof that $N_X$ is weaker than $|| \cdot ||$, and therefore also that they are equivalent.
 
 
 
