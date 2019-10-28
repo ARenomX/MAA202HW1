@@ -28,14 +28,38 @@
 \section{Exercise 1}
 \subsection{}
 
-Let $B = B(0,1)$ be the closed unit ball for the norm $||\cdot||$. Let us show that $B$ is cool. 
+Let $B = \overline{B}(0,1) = \{x \in E \ | \ ||x|| \leq 1\}$ be the closed unit ball for the norm $||\cdot||$. Let us show that $B$ is cool. \\
+
+Let us prove that $B$ is convex. \\
+Take $x, y \in B$ and $t \in [0, 1]$. We want to prove that $tx + (1-t)y \in B$. To do so, we prove that $||tx + (1-t)y|| \leq 1$. 
+\begin{align*}
+ 	||tx + (1-t)y|| &\leq ||tx|| + ||(1-t)y|| \quad \text{by the triangle inequality} \\
+	&= |t|\cdot ||x|| + |1-t|\cdot ||y|| \quad \text{by homogeneity} \\
+	&\leq t + (1-t) \quad \text{as} \  ||x|| \leq 1 \  \text{and} \  ||y|| \leq 1 \\
+	&= 1 
+\end{align*}
+Which finally proves that B is convex. \\
+
+We now prove that $B$ is bounded. \\
+Take $x \in B$ then $||x|| \leq 1$ by definition of $B$. This proves that $B$ is bounded by $1$. \\
+
+We now prove that $B$ is symmetric with respect to $0$. \\
+Take $x \in B$ then $||x|| \leq 1$ by definition of $B$ and thus $|-1|\cdot||x|| \leq 1$ and by homogeneity $||-x|| \leq 1$ which proves $-x \in B$. \\
+We have therefore proved that $B$ is symmetric with respect to $0$. \\
+
+We finally prove that $0 \in \mathring{B}$ \\
+Let $\widetilde{B}=B(0,1) = \{x \ | \  ||x|| < 1 \}$ be the open unit ball. We know $\widetilde{B} \subset B$ and $\widetilde{B}$ is open. As $\mathring{B}$ is the union of all open sets of $B$, we get $\widetilde{B} \subset \mathring{B}$. \\
+By definition, $0 \in \widetilde{B}$ and hence $0 \in \mathring{B}$. 
+
+\noindent Finally, we have proved that $B$ is cool.
+
 
 \subsection{}
 We want to show that for a cool set $X$, and $\alpha,\beta \geq 0, \, \alpha X + \beta X = (\alpha + \beta )X$\\
 We will procede by double inculsion, let us therefore first how that $\alpha X + \beta X \subset (\alpha + \beta )X$. We will take $a,b \in X$. Then $a\alpha + b\beta \in  \alpha X + \beta X$.
 \begin{align*}
 	a\alpha + b\beta = (\alpha + \beta )\left( \frac{\alpha}{\alpha + \beta}a +  \frac{\beta}{\alpha + \beta}b \right)
-\end{align}
+\end{align*}
 We have that 
 
  
