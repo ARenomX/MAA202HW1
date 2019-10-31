@@ -31,7 +31,7 @@
 
 Let $B = \bar{B}(0,1) = \{x \in E \ | \ ||x|| \leq 1\}$ be the closed unit ball for the norm $||\cdot||$. Let us show that $B$ is cool. \\
 
-Let us prove that $B$ is convex. \\
+\noindent Let us prove that $B$ is convex. \\
 Take $x, y \in B$ and $t \in [0, 1]$. We want to prove that $tx + (1-t)y \in B$. To do so, we prove that $||tx + (1-t)y|| \leq 1$. 
 \begin{align*}
  	||tx + (1-t)y|| &\leq ||tx|| + ||(1-t)y|| \quad \text{by the triangle inequality} \\
@@ -41,26 +41,26 @@ Take $x, y \in B$ and $t \in [0, 1]$. We want to prove that $tx + (1-t)y \in B$.
 \end{align*}
 Which finally proves that B is convex. \\
 
-We now prove that $B$ is bounded. \\
+\noindent We now prove that $B$ is bounded. \\
 Take $x \in B$ then $||x|| \leq 1$ by definition of $B$. This proves that $B$ is bounded by $1$. \\
 
-We now prove that $B$ is symmetric with respect to $0$. \\
+\noindent We now prove that $B$ is symmetric with respect to $0$. \\
 Take $x \in B$ then $||x|| \leq 1$ by definition of $B$ and thus $|-1|\cdot||x|| \leq 1$ and by homogeneity $||-x|| \leq 1$ which proves $-x \in B$. \\
 We have therefore proved that $B$ is symmetric with respect to $0$. \\
 
-We finally prove that $0 \in \mathring{B}$ \\
+\noindent We finally prove that $0 \in \mathring{B}$ \\
 Let $\widetilde{B}=B(0,1) = \{x \ | \  ||x|| < 1 \}$ be the open unit ball. We know $\widetilde{B} \subset B$ and $\widetilde{B}$ is open. As $\mathring{B}$ is the union of all open sets of $B$, we get $\widetilde{B} \subset \mathring{B}$. \\
-By definition, $0 \in \widetilde{B}$ and hence $0 \in \mathring{B}$. 
+By definition, $0 \in \widetilde{B}$ and hence $0 \in \mathring{B}$. \\
 
-\noindent Finally, we have proved that $B$ is cool.
-
-
+\noindent Finally, we have proved that $B$ is cool. \\
 
 
 
 \subsection{}%Exercise 1.2
-We want to show that for a cool set $X$, and $\alpha,\beta \geq 0, \, \alpha X + \beta X = (\alpha + \beta )X$\\
-We will procede by double inculsion, let us therefore first show that $\alpha X + \beta X \subseteq (\alpha + \beta )X$. We will take $a,b \in X$. Then $a\alpha + b\beta \in  \alpha X + \beta X$.
+We want to show that for a cool set $X$, and $\alpha,\beta \geq 0, \, \alpha X + \beta X = (\alpha + \beta )X$. We will proceed by double inclusion.\\
+
+\noindent Let us first show that $\alpha X + \beta X \subseteq (\alpha + \beta )X$. \\
+Take $a,b \in X$. Then $a\alpha + b\beta \in  \alpha X + \beta X$. We then write:
 \begin{align*}
 	a\alpha + b\beta = (\alpha + \beta )\left( \frac{\alpha}{\alpha + \beta}a +  \frac{\beta}{\alpha + \beta}b \right)
 \end{align*}
@@ -68,46 +68,64 @@ We define $t := \frac{\alpha}{\alpha + \beta} \in [0,1]$, and thus $\frac{\beta}
 \begin{align*}
 	a\alpha + b\beta = (\alpha + \beta )\big(at + b(t-1)\big)
 \end{align*}
-By the definition of a cool set, we have that $X$ is convex, and hence for $a,b \in X$, we have $c:=ta + (t-1)b \in X$. Therefore:
+As $X$ is a cool set, it is convex. Hence for $a,b \in X$, we have $c:=ta + (t-1)b \in X$. Therefore:
 \begin{align*}
 	a\alpha + b\beta = (\alpha + \beta )c \in (\alpha + \beta )X
 \end{align*}
-We therefore have that $\alpha X + \beta X \subseteq (\alpha + \beta )X$.\\We now want to show that $\alpha X + \beta X \supseteq (\alpha + \beta )X$.\\ We take $x \in (\alpha + \beta )X$. Then there exists $y \in X$ such that:
+We have therefore proved that $\alpha X + \beta X \subseteq (\alpha + \beta )X$.\\
+
+\noindent We now want to show that $\alpha X + \beta X \supseteq (\alpha + \beta )X$.\\ 
+Take $x \in (\alpha + \beta )X$. Then there exists $y \in X$ such that:
 \begin{align*}
 	x &= (\alpha + \beta )y\\
 	&= \alpha y + \beta y \in \alpha X + \beta X
 \end{align*}
-We therefore have that $\alpha X + \beta X \supseteq (\alpha + \beta )X$.\\ This concludes the proof that $\alpha X + \beta X = (\alpha + \beta )X$.
+We therefore have proved that $\alpha X + \beta X \supseteq (\alpha + \beta )X$.\\ 
 
+\noindent Finally, by double inclusion, we have proved that $\alpha X + \beta X = (\alpha + \beta )X$. \\
 
 
 
 \subsection{}%Exercise 1.3
+We now define a function on E by setting for ever $x \in E$, $$N_X(x) = \inf\{|\alpha| \ | \ x \in \alpha X \}$$
+We now show that $N_X$ is well-defined and that it defines a norm on E. 
+
 \subsubsection{}%Exercise 1.3.a
 
-We want to show that for each $x \in E$, the set $N := \{a\,|\, x \in \alpha X\}$ is not empty. We start from the fact that $0 \in \mathring{X}$. Therefore it must also be true that there exists an $r > 0$ such that $B(0,r) \subset X$. We will define $\alpha := \frac{2||x||}{r}$. We know that $B(0,\alpha r) \subset \alpha X$. Since $B(0, \alpha r) = B(0, 2||x||)$, we have that $x \in \alpha X$, and hence $\alpha \in N$.
+We want to show that for each $x \in E$, the set $N := \{\alpha \,|\, x \in \alpha X\}$ is not empty. \\
+
+\noindent We start from the fact that $0 \in \mathring{X}$. \\
+Then, there exists an $r > 0$ such that $B(0,r) \subset X$. \\
+We define $\alpha := \frac{2||x||}{r}$. We know that $B(0,\alpha r) \subset \alpha X$. Since $B(0, \alpha r) = B(0, 2||x||)$, we have that $x \in \alpha X$, and hence $\alpha \in N$. \\
+
+\noindent We have hence proved that $N$ isn't empty.
 
 \subsubsection{}%Exercise 1.3.b
 
-We want to show that $N_X(\lambda x) = |\lambda|N_X(x)$, we start from:
+We want to show $N$ is homogeneous, that is $N_X(\lambda x) = |\lambda|N_X(x)$. \\
+
+\noindent We start from:
 \begin{align*}
 	N_X(\lambda x) &= \inf\{|\alpha | \, | \lambda x \in \alpha X\}
 \end{align*}
 But we know that $\lambda x \in \alpha X \Leftrightarrow \lambda x \in -\alpha X$, hence we can write:
 \begin{align*}
-	N_X(\lambda x) &= \inf\{|\alpha | \, | |\lambda| x \in \alpha X\}\\
-	&= \inf\{|\lambda \alpha | \, | x \in \alpha X\}\\
-	&= |\lambda|\inf\{|\alpha | \, | x \in \alpha X\}\\
+	N_X(\lambda x) &= \inf\{|\alpha | \ | \ |\lambda| x \in \alpha X\}\\
+	&= \inf\{|\lambda \alpha | \ | \ x \in \alpha X\}\\
+	&= |\lambda|\inf\{|\alpha | \ | \ x \in \alpha X\}\\
 	&= |\lambda|N_X(x)
 \end{align*}
-This concludes the proof.
+We have hence proved $N$ is homogeneous.
+
 \subsubsection{}%Exercise 1.3.c
-We want to show that $N_X(x) = 0 \Rightarrow x=0$, we start from:
+We want to show that $N$ is definite, that is $N_X(x) = 0 \, \Rightarrow \, x=0$. \\
+
+\noindent We start from:
 \begin{align*}
-	N_X(0) &= \inf\{|\alpha | \, | \lambda x \in \alpha X\} = 0\\
-	&\Rightarrow x \in 0 \times X\\
-	&\Rightarrow ||x|| \leq 0 \times M_X\\
-	&\Rightarrow x = 0
+	& N_X(0) = \inf\{|\alpha | \, |  \, x \in \alpha X\} = 0\\
+	\Rightarrow& \, x \in 0 \times X\\
+	\Rightarrow& \, ||x|| \leq 0 \times M_X\\
+	\Rightarrow& \, x = 0
 \end{align*}
 This concludes the proof.
 
