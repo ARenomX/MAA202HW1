@@ -164,9 +164,17 @@ This concludes the proof that $N_X$ is weaker than $|| \cdot ||$, and therefore 
 
 \subsection{} %Exercise 1.5
 
-We know that $x \in \bar{X}$ is equivalent to
-
-\noindent \textbf{TO DO} \\
+We know that $x \in \bar{X}$ for the norm $N_X$ is equivalent to
+\begin{align*}
+	\exists (x_n)_{n \in \mathbb{N}} \in X^{\mathbb{N}}, (x_n) \text{ converges for }N_X \text{ to } x
+\end{align*}
+But wee know that the norms $||\cdot ||$ and $N_X$ are equivalent, therefore if a sequence converrges under $N_X$, then it must also converge under $|| \cdot ||$. Therefore:
+\begin{align*}
+	 x \in \bar{X}_{N_X} &\Leftrightarrow \exists (x_n)_{n \in \mathbb{N}} \in X^{\mathbb{N}},(x_n) \text{ converges for }|| \cdot || \text{ to } x\\
+	&\Leftrightarrow x \in \bar{X}_{|| \cdot ||}
+\end{align*}
+We have therefore shown equivalence between the closure of $X$ for the two norms. This concludes the proof.
+	
 
 
 \section{Exercise 2}
