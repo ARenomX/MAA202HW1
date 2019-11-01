@@ -8,10 +8,13 @@
 \usepackage{float}
 \usepackage{hhline}
 
+\usepackage{geometry}
+\geometry{margin=3cm}
+
 \title{MAA202: Analysis\\Homework I}
 
 \date{4$^{th}$ November 2019}
-\author{Ma\"elys Solal\\Alexandre Hirsch\\Andr\'e Renom}
+\author{Alexandre Hirsch, Andr\'e Renom, Maëlys Solal}
 
 \begin{document}
 
@@ -163,11 +166,12 @@ This concludes the proof that $N_X$ is weaker than $|| \cdot ||$, and therefore 
 
 We know that $x \in \bar{X}$ is equivalent to
 
+\noindent \textbf{TO DO} \\
 
 
 \section{Exercise 2}
 
-\subsection{} %Exercise 1.1
+\subsection{} %Exercise 2.1
 
 Let us prove that $\bar{B}(0,1)$ is compact if and only if $S(0, 1) = \{ x\in E \ | \ N(x)=1 \}$ is compact. We will prove this by double implication. \\
 
@@ -182,15 +186,51 @@ We know $S(0, 1) \subset \bar{B}(0,1)$ then $S(0,1)$ is compact provided it is c
 We know $B(0,1)$ is open and as $\bar{B}(0, 1)$ is closed, $ (\bar{B}(0, 1))^c$ is open and hence $(S(0,1))^c$ is open as the union of open sets. Thus  $S(0, 1)$ is closed and therefore compact. \\
 
 \noindent Let us now prove the converse statement. Assume $S(0, 1)$ is compact. \\
+
+\noindent Consider the function 
+\begin{align*} 
+f & : & S(0,1) \times [0,1] & \to & E \\
+ & & (x,t) & \mapsto & tx 
+\end{align*} \\
+Let us prove that $f$ is Lipschitz continuous. \\
+Let $x, y \in S(0,1) $ and let $t_x, t_y \in [0,1]$. Then $N(t_xx-t_yy) \leq N(x-y)$ and thus $f$ is Lipschitz continuous. \\
+Hence $f(S(0,1), [0,1])$ is compact. \\
+
+\noindent Let us now prove that $f(S(0,1), [0,1]) = \bar{B}(0,1)$ by double inclusion.
+\begin{itemize}
+\item ''$\subseteq$'' 
+Take $x \in S(0,1)$ and $t \in [0,1]$. \\
+Then $N(f(x,t)) = N(tx) = |t| \, N(x) \leq N(x) = 1$ hence $f(x, t) \in \bar{B}(0,1)$. \\
+ Therefore we have proved $f(S(0,1), [0,1]) \subseteq \bar{B}(0,1)$
+\item ''$\supseteq$''
+Take $x \in \bar{B}(0,1)$. We must prove that there exist $x' \in S(0,1)$ and $t' \in [0,1]$ such that $f(x', t') = x't' = x$. 
+	\begin{itemize}
+	\item If $x=0$:
+	then we can set $t' :=0$ and let $x'$ be any element of $S(0,1)$. 
+	We then get $f(x', t') = x't' = 0 = x$ which proves $x \in f(S(0,1), [0,1])$ 
+	\item If $x \neq 0$:
+	Let $t := \frac{1}{N(x)}$, then $N(tx) = |t| \, N(x) = 1$ thus we can set $x' := tx \in S(0,1)$. 
+	We then set $t' := N(x) \in [0,1]$ so that $x = x't'$. 
+	We hence get $f(x', t') = x$ which proves $x \in f(S(0,1), [0,1])$ 
+	\end{itemize}
+We therefore have proved that $\bar{B}(0,1) \subseteq S(0,1)$. 
+\end{itemize}
+
+\noindent Finally, $f(S(0,1), [0,1]) = \bar{B}(0,1)$ and hence $\bar{B}(0,1)$ is compact which finally concludes the proof. 
+
+
+\subsection{} %Exercise 2.2
+
 \textbf{TO DO} \\
-Hence $\bar{B}(0,1)$ is compact.
 
 
+\subsection{} %Exercise 2.3
 
+Let's first prove that $d(x, F) \leq N(x)$. \\
+From the previous question, we have that $x \mapsto d(x, F)$ is Lipschitz-continuous so $\forall x, y \in F \  |d(x, F) -d(y, F)| \leq N(x - y)$. Now let $y=0$ which is possible as $0 \in F$ because F is a vector subspace. We then get $|d(x, F) -d(0, F)| = |d(x, F)| = d(x, F) \leq N(x -0) = N(x)$ from which we get our result. \\
 
-
-
-
+\noindent Let us now prove that $d(x, F) = \inf \{N(x-u) \,| \, u \in F, \, N(u) \leq 2N(x) \}$ \\
+\textbf{TO DO}
 
  
 %%% Table Format %%%
