@@ -165,6 +165,26 @@ We know that $x \in \bar{X}$ is equivalent to
 
 
 
+\section{Exercise 2}
+
+\subsection{} %Exercise 1.1
+
+Let us prove that $\bar{B}(0,1)$ is compact if and only if $S(0, 1) = \{ x\in E \ | \ N(x)=1 \}$ is compact. We will prove this by double implication. \\
+
+\noindent Assume $\bar{B}(0,1) = \{ x \in E \ | \ N(x) \leq 1 \}$ is compact. \\
+We know $S(0, 1) \subset \bar{B}(0,1)$ then $S(0,1)$ is compact provided it is closed as any closed subset of a compact set is compact. Let us now prove $S(0, 1)$ is closed by proving its complement is open. We have:
+\begin{align*}
+	(S(0,1))^c &= \{ x\in E \ | \ N(x) \neq 1 \} \\
+	&=  \{ x\in E \ | \ N(x) < 1 \lor N(x) > 1 \} \\
+	&= \{ x\in E \ | \ N(x) < 1 \} \cup \{ x\in E \ | \ N(x) > 1 \} \\
+	&= B(0, 1) \cup (\bar{B}(0, 1))^c 
+\end{align*}
+We know $B(0,1)$ is open and as $\bar{B}(0, 1)$ is closed, $ (\bar{B}(0, 1))^c$ is open and hence $(S(0,1))^c$ is open as the union of open sets. Thus  $S(0, 1)$ is closed and therefore compact. \\
+
+\noindent Let us now prove the converse statement. Assume $S(0, 1)$ is compact. \\
+\textbf{TO DO} \\
+Hence $\bar{B}(0,1)$ is compact.
+
 
 
 
