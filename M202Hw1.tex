@@ -197,8 +197,8 @@ We know $B(0,1)$ is open and as $\bar{B}(0, 1)$ is closed, $ (\bar{B}(0, 1))^c$ 
 
 \noindent Consider the function 
 \begin{align*} 
-f & : & S(0,1) \times [0,1] & \to & E \\
- & & (x,t) & \mapsto & tx 
+f  : \  & S(0,1) \times [0,1]  \to  E \\
+  & (x,t)  \mapsto  tx 
 \end{align*} \\
 Let us prove that $f$ is Lipschitz continuous. \\
 Let $x, y \in S(0,1) $ and let $t_x, t_y \in [0,1]$. Then $N(t_xx-t_yy) \leq N(x-y)$ and thus $f$ is Lipschitz continuous. \\
@@ -229,12 +229,42 @@ We therefore have proved that $\bar{B}(0,1) \subseteq S(0,1)$.
 
 \subsection{} %Exercise 2.2
 
-\textbf{TO DO} \\
-
+We first recall the definition of Lischitz continuity for two normed vector spaces each endowed with their own norm, $(E,N_E), (F,N_F)$. The map $f$ is 1-Lipschitz continuous if:
+\begin{align*}
+	\forall x,y \in E, \, N_F\big( f(x) - f(y) \big) \leq N_E(x-y)
+\end{align*}
+In this case, we are considering the function $f:\, E \rightarrow \mathbb{R}, \, x \mapsto d(x,A) = inf\{ N(x-u) \, | \, u \in A \}$  with $A \subset E$. We want to show that the map $f$ is 1-Lipschitz continuous. That is to say that:
+\begin{align*}
+	\big| f(x) - f(y) \big| \leq N(x-y)
+\end{align*}
+First we consider an element $z_1 \in \bar{A}$ such that $d(y,z_1) = d(y,A)$. By the triangular inequality for distances, we have:
+\begin{align*}
+	d(x,z_1) \leq d(x,y) + d(y,z_1)\\
+\end{align*}
+However, we know that by definition $d(x,A) \leq d(x,z_1)$, and $d(y,z_1) = d(y,A)$, hence:
+\begin{align*}
+	d(x,A) &\leq d(x,y) + d(y,A)\\
+	d(x,A) - d(y,A) &\leq d(x,y)
+\end{align*}
+We will now consider an element $z_2 \in \bar{A}$ such that $d(x,z_1) = d(x,A)$. By the same logic as above:
+\begin{align*}
+	d(y,z_2) \leq d(y,x) + d(x,z_2)\\
+\end{align*}
+However, we know that by definition $d(y,A) \leq d(y,z_2)$, and $d(x,z_2) = d(x,A)$. Also, we have that $d(x,y) = d(y,x)$. Hence:
+\begin{align*}
+	d(y,A) &\leq d(y,x) + d(x,A)\\
+	-\big( d(x,A) - d(y,A) \big) &\leq d(x,y)
+\end{align*}
+By combining these two results, we hae that:
+\begin{align*}
+	\big| d(x,A) - d(y,A) \big| &\leq d(x,y)\\
+	\big| f(x) - f(y) \big| &\leq N(x-y)
+\end{align*}
+This concludes the proof of 1-Lipschitz continuity.
 
 \subsection{} %Exercise 2.3
 
-Let's first prove that $d(x, F) \leq N(x)$. \\
+Let us first prove that $d(x, F) \leq N(x)$. \\
 From the previous question, we have that $x \mapsto d(x, F)$ is Lipschitz-continuous so $\forall x, y \in F \  |d(x, F) -d(y, F)| \leq N(x - y)$. Now let $y=0$ which is possible as $0 \in F$ because F is a vector subspace. We then get $|d(x, F) -d(0, F)| = |d(x, F)| = d(x, F) \leq N(x -0) = N(x)$ from which we get our result. \\
 
 \noindent Let us now prove that $d(x, F) = \inf \{N(x-u) \,| \, u \in F, \, N(u) \leq 2N(x) \}$ \\
