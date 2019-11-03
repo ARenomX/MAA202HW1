@@ -270,31 +270,40 @@ From the previous question, we have that $x \mapsto d(x, F)$ is Lipschitz-contin
 \noindent Let us now prove that $d(x, F) = \inf \{N(x-u) \,| \, u \in F, \, N(u) \leq 2N(x) \}$. We have from the previous question that since $F$ is a subset of $E$, $d(x, F) = \inf \{N(x-u) \,| \, u \in F\}$. We also know that $0 \in F$. Assume therefore that $N(u) > 2N(x)$, then $d(u,x) > N(x) = d(x,0)$. In other words, since zero is in $F$, we need not consider elements of F whose distance from $x$ will be greater than the distance between $x$ and $0$.
 
 \subsection{} %Exercise 2.4
-%In order to show that $d(x,F)$ is attained at some $u_x \in F$, we need to show that the set $\{N(x-u) \,| \, u \in F, \, N(u) \leq 2N(x) \}$ is closed and bounded, because alongside the fact that $d$ is a continuous function and that $F$ is of finite dimension, this is sufficient to show that the infimum is contained in the set.
 
-We want to show that $\exists \, u_x \in F, d(x,u_x) = d(x,F)$. We therefore define a function
+We want to show that $d(x,F)$ is attained at some $u_x\in F$. That is to say $\exists \, u_x \in F, d(x,u_x) = d(x,F)$. We therefore define a function
 	\begin{align*}
 	f: F &\to \mathbb{R}_+\\
 	u &\mapsto N(x-u) = d(x,u)
 	\end{align*}
 We will also define a set $U := \{u \in F \, | \, N(u) \leq 2N(x)\}$.\\ 
-\noindent We have from previous questions that $d(x,F) = \inf\{ N(x-u) | u \in U\} = \inf\{ f(u) | u \in U\}$. But if $f$ is continuous and $U$ is compact then we know that the infimum is attained at some value in $U\!$. \\
-	We have that $U$ is bounded. Let $M = 2N(x)$ by definition of $U, \forall u\in U, N(x) \leq M$\\
-	We also have that $U$ is closed. Assume by contradiction that there exists $(x_n)_n \in U^{\mathbb{N}}$ such that it converges to $l \not \in U$. Fix $\varepsilon > 0$, there exists $n \in \mathbb{N}$ such that $N(l-x_n) <\varepsilon$
-	\begin{equation*}
-	N(l) = N(l-x_n+x_n) \leq N(x_n -l) + N(x_n) < \varepsilon + N(x_n) \leq  \varepsilon + 2N(x)
-	\end{equation*}
-	Letting $\varepsilon$ go to zero we find that $l \in U$ thus $U$ is closed. Since $U\subset F$ a finite dimensional space we have that it is compact.\\
-	It now remains to prove that $f$ is continuous. Let $y, z \in F$. 
+\noindent We have from previous questions that $d(x,F) = \inf\{ N(x-u) | u \in U\} = \inf\{ f(u) | u \in U\}$. The necessary conditons for $d(x,F)$ to be attained are that $U$ is compact and $f$ is continuous.\\
+\noindent We have by definition that $U$ is bounded, with $M = 2N(x)$. Snce $F$ is finite dimensional, it now suffices to prove that $U$ is closed to satisfy compactness. We will argue by contradiction, and assume that there exists a sequence $(x_n)_{n \in \mathbb{N}} \in U^{\mathbb{N}}$ converging to $l \not \in U$. Then for some $\epsilon > 0$, $\exists n \in \mathbb{N}, \, N(l-x_n) < \epsilon$.
+\begin{align*}
+	N(l) &= N(l-x_n+x_n) \\
+	&\leq N(x_n -l) + N(x_n) \\
+	&< \epsilon + N(x_n) \\
+	&\leq  \epsilon + 2N(x)
+\end{align*}
+As $\epsilon \rightarrow 0$, we find that $l$ is in fact in $U$, showing that $U$ is therefore closed.\\
+\noindent We will now show that f is continuous. We will do this using the triangular inequality, taking $y, z \in F$. 
 	\begin{align*}
-		N(y-x) = N(y-z+z-x) \leq N(y-z) + N(z-x) \Leftrightarrow f(y) - f(z) \leq N(y-z)\\
-		N(z-x) = N(z-y+y-x) \leq N(y-z) + N(y-x) \Leftrightarrow -(f(y) - f(z)) \leq N(y-z)
+		N(y-x) &= N(y-z+z-x) \leq N(y-z) + N(z-x) \Leftrightarrow \quad \, f(y) - f(z) \ \leq N(y-z)\\
+		N(z-x) &= N(z-y+y-x) \leq N(y-z) + N(y-x) \Leftrightarrow -(f(y) - f(z)) \leq N(y-z)
 	\end{align*}
-	Thus we have that $|f(y) - f(z)| \leq N(y-z)|$ thus $f$ is continuous.\\
-	This finally gives the result that the infimum is attained for some $u_x\in F$.
+We therefore have that $|f(y) - f(z)| \leq N(y-z)|$ showing that $f$ is a continuous function.\\
+\noindent Combining the compactness of $U$ and the continuity of $F$ concludes the proof that  finally gives the result that $d(x,F)$ is attained at some $u_x\in F$.
 
 \subsection{} %Exercise 2.5
-The set $\{y | y = x - u_x, x \in E\}$ is effectively a scaling 
+We want to show that for a function $y:x-u_x$, 
+\begin{align*}
+	\sup _{N(y) = 1} d(y,F) \in \{ 0,1\}
+\end{align*}
+We will first consider the case where $F = E$, where $d(y,F)$ can take no other value than 0. In that case we trivially have
+\begin{align*}
+	\sup _{N(y) = 1} d(y,F) = 0 \in \{ 0,1\}
+\end{align*}
+We now consider the case where $F \subsetneq E$. The set $\{ d(y,F) \, | \, y \in F, \, N(y) = 1 \}$ can be re-written as $\{ d(x-u_x,F) \, | \, x \in F, \, d(x,F) = 1 \}$. We know that $x$ and $u_x$ are colinear, and so $d(x-u_x,F) = d(x,F) - N(u_x) = N(x) - 2N(u_x) = 1 - N(u_x)$ We are therfore looking for $\sup_{d(x,F) = 1} 1 - N(u_x)$. We know that the norm is strictly non-negative, and that $0 \in F$, so we can say that $\sup_{d(x,F) = 1} 1 - N(u_x) = 1$. This concludes the proof.
 
 
 \end{document}
