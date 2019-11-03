@@ -246,7 +246,7 @@ However, we know that by definition $d(x,A) \leq d(x,z_1)$, and $d(y,z_1) = d(y,
 	d(x,A) &\leq d(x,y) + d(y,A)\\
 	d(x,A) - d(y,A) &\leq d(x,y)
 \end{align*}
-We will now consider an element $z_2 \in \bar{A}$ such that $d(x,z_1) = d(x,A)$. By the same logic as above:
+We will now consider an element $z_2 \in \bar{A}$ such that $d(x,z_2) = d(x,A)$. By the same logic as above:
 \begin{align*}
 	d(y,z_2) \leq d(y,x) + d(x,z_2)\\
 \end{align*}
@@ -309,6 +309,15 @@ We now consider the case where $F \subsetneq E$. We have from a previous questio
 
 \subsection{} %Exercise 2.6
 
+Let us construct this infinite sequence by induction. \\
+
+\noindent Start by $x_0 \in S(0,1)$, then $N(x_0)=1$. \\
+Let us prove $Span(x_0) \supsetneq S(0,1)$ by contradiction. Assume $x_0$ spans $S(0,1)$ then it would also span $E$ which is a contradiction as $E$ is of infinite dimension. \\
+
+\noindent Then take $x_1 \in S(0,1)$ such that $N(x_1-x_0)=1$, we also have $N(x_1)=1$ \\
+By the same arguments and as $\dim E > 1$, $(x_0 - x_1)$ doesn't span $S(0,1)$ \\
+
+\noindent Then by induction, as $\dim E = + \infty$ we can construct an infinite sequence $(x_i)_{i \in \mathbb{N}}$ that spans $E$ such that $N(x_n - x_m) = 1$ if $n \neq m$ and $N(x_n) = 1$ for $n \geq 0$.
 
 
 
