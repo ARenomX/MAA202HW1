@@ -265,7 +265,7 @@ This concludes the proof of 1-Lipschitz continuity.
 \subsection{} %Exercise 2.3
 
 Let us first prove that $d(x, F) \leq N(x)$. \\
-From the previous question, we have that $x \mapsto d(x, F)$ is Lipschitz-continuous so $\forall x, y \in F \  |d(x, F) -d(y, F)| \leq N(x - y)$. Now let $y=0$ which is possible as $0 \in F$ because F is a vector subspace of E. We then get $|d(x, F) -d(0, F)| = |d(x, F)| = d(x, F) \leq N(x -0) = N(x)$ from which we get our result. \\
+From the previous question, we have that $x \mapsto d(x, F)$ is Lipschitz-continuous so: $$\forall x, y \in F \  |d(x, F) -d(y, F)| \leq N(x - y)$$ Now let $y=0$ which is possible as $0 \in F$ because F is a vector subspace of E. We then get $|d(x, F) -d(0, F)| = |d(x, F)| = d(x, F) \leq N(x -0) = N(x)$ from which we get our result. \\
 
 \noindent Let us now prove that $d(x, F) = \inf \{N(x-u) \,| \, u \in F, \, N(u) \leq 2N(x) \}$. We have from the previous question that since $F$ is a subset of $E$, $d(x, F) = \inf \{N(x-u) \,| \, u \in F\}$. We also know that $0 \in F$. Assume therefore that $N(u) > 2N(x)$, then $d(u,x) > N(x) = d(x,0)$. In other words, since zero is in $F$, we need not consider elements of F whose distance from $x$ will be greater than the distance between $x$ and $0$.
 
@@ -277,7 +277,7 @@ We want to show that $d(x,F)$ is attained at some $u_x\in F$. That is to say $\e
 	u &\mapsto N(x-u) = d(x,u)
 	\end{align*}
 We will also define a set $U := \{u \in F \, | \, N(u) \leq 2N(x)\}$.\\ 
-\noindent We have from previous questions that $d(x,F) = \inf\{ N(x-u) | u \in U\} = \inf\{ f(u) | u \in U\}$. The necessary conditons for $d(x,F)$ to be attained are that $U$ is compact and $f$ is continuous.\\
+\noindent We have from previous questions that $d(x,F) = \inf\{ N(x-u) \, | \, u \in U\} = \inf\{ f(u) \, | \, u \in U\}$. The necessary conditons for $d(x,F)$ to be attained are that $U$ is compact and $f$ is continuous.\\
 \noindent We have by definition that $U$ is bounded, with $M = 2N(x)$. Snce $F$ is finite dimensional, it now suffices to prove that $U$ is closed to satisfy compactness. We will argue by contradiction, and assume that there exists a sequence $(x_n)_{n \in \mathbb{N}} \in U^{\mathbb{N}}$ converging to $l \not \in U$. Then for some $\epsilon > 0$, $\exists n \in \mathbb{N}, \, N(l-x_n) < \epsilon$.
 \begin{align*}
 	N(l) &= N(l-x_n+x_n) \\
@@ -285,17 +285,17 @@ We will also define a set $U := \{u \in F \, | \, N(u) \leq 2N(x)\}$.\\
 	&< \epsilon + N(x_n) \\
 	&\leq  \epsilon + 2N(x)
 \end{align*}
-As $\epsilon \rightarrow 0$, we find that $l$ is in fact in $U$, showing that $U$ is therefore closed.\\
+As $\epsilon \rightarrow 0$, we find that $l$ is in fact in $U$, showing by contradiction that $U$ is therefore closed.\\
 \noindent We will now show that f is continuous. We will do this using the triangular inequality, taking $y, z \in F$. 
 	\begin{align*}
 		N(y-x) &= N(y-z+z-x) \leq N(y-z) + N(z-x) \Leftrightarrow \quad \, f(y) - f(z) \ \leq N(y-z)\\
 		N(z-x) &= N(z-y+y-x) \leq N(y-z) + N(y-x) \Leftrightarrow -(f(y) - f(z)) \leq N(y-z)
 	\end{align*}
-We therefore have that $|f(y) - f(z)| \leq N(y-z)|$ showing that $f$ is a continuous function.\\
-\noindent Combining the compactness of $U$ and the continuity of $F$ concludes the proof that  finally gives the result that $d(x,F)$ is attained at some $u_x\in F$.
+We therefore have that $|f(y) - f(z)| \leq N(y-z)$ showing that $f$ is a continuous function.\\
+\noindent Combining the compactness of $U$ and the continuity of $f$ concludes the proof that  finally gives the result that $d(x,F)$ is attained at some $u_x\in F$.
 
 \subsection{} %Exercise 2.5
-We want to show that for a function $y:x-u_x$, 
+We want to show that for an element $y:=x-u_x \in E$, 
 \begin{align*}
 	\sup _{N(y) = 1} d(y,F) \in \{ 0,1\}
 \end{align*}
@@ -329,8 +329,8 @@ We will prove by contradiction that all compact sets are precompact. \\
 Let F be a compact and non-precompact subset of E.\\
 Let $I \subset \mathbb{N}$, such that $\exists (x_i)_{i \in I}$ such that $F\subset\bigcup\limits_{i\in I}B(x_i, \epsilon)$ 
 Let us construct the sequence $(u_n)_{n \in I} \in F^{\mathbb{N}}$, such that $u_i \in B(x_i,\epsilon) \setminus \bigcup \limits_{j\in I, j \neq i}B(x_j, \epsilon) \subset F$ \\
-We have, $\forall i,j \in I,i \neq j$, $N(u_i-u_j) \geq \frac{1}{2} \min_{i,j \in I}(N(x_i-x_j)$.\\
-Thus $\forall (u_n)_{n \in I}, \forall \phi strictly increasing, (u_{\phi(n)}$ does not converge.\\
+We have, $\forall i,j \in I,i \neq j$, $N(u_i-u_j) \geq \frac{1}{2} \min_{i,j \in I}\big( N(x_i-x_j)\big)$.\\
+Thus $\forall (u_n)_{n \in I}, \forall \phi \text{ strictly increasing}, (u_{\phi(n)})$ does not converge.\\
 Thus $(u_n)_{n \in I}$ does not have an adherence value and F is therefore not compact. This is a contradiction with the fact that F is compact.\\
 Therefore, all compact sets are precompact.\\
 
