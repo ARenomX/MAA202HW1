@@ -303,7 +303,6 @@ We will first consider the case where $F = E$, where $d(y,F)$ can take no other 
 \begin{align*}
 	\sup _{N(y) = 1} d(y,F) = 0 \in \{ 0,1\}
 \end{align*}
-We now consider the case where $F \subsetneq E$. We have from a previous question that $d(y,F) \leq N(y) = 1$. We take $u_y \in F$ to be the element of F for which $d(y,F)$ is attained. We therefore have that $\forall u \in F, \, N(y - u_y) \leq N(y - u)$. Along the same principle, we have that $\forall u \in F, \, N(x - u_x) \leq N(x - u)$. Since $u_x + u_y \in F$, $N(x - u_x) \leq N\big( x i (u_x + u_y)\big)$.\\
 We now consider the case where $F \subsetneq E$. We have from a previous question that $d(y,F) \leq N(y) = 1$. We take $u_y \in F$ to be the element of F for which $d(y,F)$ is attained. We therefore have that $\forall u \in F, \, N(y - u_y) \leq N(y - u)$. Along the same principle, we have that $\forall u \in F, \, N(x - u_x) \leq N(x - u)$. Since $u_x + u_y \in F$, $N(x - u_x) \leq N\big( x - (u_x + u_y)\big)$.\\
 \noindent We now use the initial statement that $\forall x \in E, \, d(x,f) \leq N(x)$, to say that $N(y- u_y) \leq N(y)$, using the definition of $y$ to rewrite this as $N\big( x - (u_x + u_y)\big) \leq N(x - u_x)$.\\
 \noindent The two sides of the inequality conclude that $N\big( x - (u_x + u_y)\big) = N(x - u_x)$, that is to say $N(y- u_y) = N(y) = 1$. This concludes the proof that $\sup _{N(y) = 1} d(y,F) \in \{ 0,1\}$.
